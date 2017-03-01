@@ -1,0 +1,7 @@
+FROM tomcat:7-jre8
+MAINTAINVER kaithi.030303@gmail.com
+COMPY jenkins.war /usr/local/tomcat/webapps/jenkins.war
+EXPOSE 8080
+CMD ["catalina.sh","run"]
+
+
