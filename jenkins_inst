@@ -1,8 +1,8 @@
 FROM tomcat:7-jre8
-MAINTAINVER kaithi.030303@gmail.com
-RUN apt-get update && apt-get install -y git curl
-COMPY jenkins.war /usr/local/tomcat/webapps/jenkins.war
+MAINTAINER kaithi.030303@gmail.com
+RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
+ENV JENKINS_HOME /var/jenkins_home
+COPY jenkins.war /usr/local/tomcat/webapps/jenkins.war
 EXPOSE 8080
 CMD ["catalina.sh","run"]
-ENTRYPOINT
 
